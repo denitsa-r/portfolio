@@ -151,7 +151,11 @@ img {
   position: relative;
 }
 .hero-title .display {
-  background: linear-gradient(180deg, $cream_color 0%, my_lighten($light_primary, 5%) 100%);
+  background: linear-gradient(
+    180deg,
+    $cream_color 0%,
+    my_lighten($light_primary, 5%) 100%
+  );
   -webkit-background-clip: text;
   font-family: inherit;
   background-clip: text;
@@ -170,7 +174,6 @@ img {
   pointer-events: none;
 }
 .hero-title .social {
-  margin-top: 1rem;
   li {
     opacity: 0.8;
   }
@@ -211,7 +214,6 @@ img {
   color: #000;
   padding: 0.75rem 1rem;
   border-radius: 999px;
-  margin-top: 1rem;
 }
 .about-photo .card {
   border-radius: 16px;
@@ -222,12 +224,11 @@ img {
   display: block;
 }
 .contact-card {
-    position: static;
-    width: auto;
-    box-shadow: none;
-    border-radius: 12px;
-    margin-top: 0.5rem;
-  }
+  position: static;
+  width: auto;
+  box-shadow: none;
+  border-radius: 12px;
+}
 
 // resume blocks
 .block-dual {
@@ -292,7 +293,7 @@ img {
   gap: 0.5rem;
 }
 .chip {
-   background: rgba($grey_color, 0.6);
+  background: rgba($grey_color, 0.6);
   color: $light_color;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
@@ -309,19 +310,37 @@ img {
   padding-bottom: 3rem;
 }
 .card {
-  border-radius: 16px;
+  border-radius: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.accent-style {
+  background: rgba(59, 167, 201, 0.12);
+  border-left: 4px solid #8fd3ff;
+  border-radius: 12px;
 }
 .card.accent {
-  background: rgba($light_primary, 0.35);
+  background: $grey_color;
   color: #000;
   padding: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(4px);
+  img {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+  }
 }
 .card-body {
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  p {
+    color: $white_color;
+  }
 }
 .card-link {
   display: block;
@@ -476,9 +495,13 @@ h1 {
   color: $dark_color;
 }
 .hero-case-study {
-  background: linear-gradient(180deg, $forest_color 0%, my_ldarken($forest_color, 6%) 60%, $dark_color 100%);
+  background: linear-gradient(
+    180deg,
+    $forest_color 0%,
+    my_ldarken($forest_color, 6%) 60%,
+    $dark_color 100%
+  );
   color: $light_color;
-  padding: 3rem 0 2rem;
 }
 .case-study .section {
   background: $cream_color;
@@ -490,20 +513,16 @@ h1 {
 .case-study-intro .grid > div {
   background: rgba($primary_color, 0.12);
   border-left: 4px solid $light_primary;
+  padding: 1rem;
   border-radius: 12px;
 }
-.case-study-content section:nth-of-type(odd) {
-  background: rgba($primary_color, 0.08);
-  border-left: 4px solid $light_primary;
-}
-.case-study-content section:nth-of-type(even) {
-  background: transparent;
+.case-study-intro > div {
+  padding: 0 1.5rem;
 }
 .case-study-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
-  margin-top: 2rem;
 }
 @media (max-width: 768px) {
   .case-study-grid {
