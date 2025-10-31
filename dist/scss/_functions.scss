@@ -1,0 +1,13 @@
+@use "sass:color";
+
+// Custom lightening function to replace deprecated `lighten`
+// Usage: my_lighten(#123456, 10%)
+@function my_lighten($base-color, $amount) {
+  @return color.scale($base-color, $lightness: $amount);
+}
+
+// Custom darkening function to replace deprecated `darken`
+// Usage: my_darken(#123456, 10%)
+@function my_darken($base-color, $amount) {
+  @return color.scale($base-color, $lightness: -$amount);
+}

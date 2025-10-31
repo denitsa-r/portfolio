@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/css/main.min.css" />
+    <title>Потрфолио</title>
+  </head>
+  <body>
+    <header class="site-header"></header>
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-media">
+            <img
+              src="./img/new-edit (6 of 20)-1.jpg"
+              class="img"
+              alt="Портрет"
+            />
+          </div>
+          <div class="hero-title">
+            <h1 class="display">Портфолио</h1>
+            <div class="outline">Портфолио</div>
+            <ul class="social">
+              <li>Инстаграм: @ddenytsa</li>
+              <li>Линкедин: /denitsa-rashkova</li>
+            </ul>
+          </div>
+          <div class="hero-cta">
+            <a href="#about" class="pill">Разгледай надолу</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="container about-grid">
+          <div class="intro">
+            <h2 class="fancy">Здравей,<br />аз съм Деница!</h2>
+            <p>
+              Аз съм студент в Софийски университет, специалност "Софтуерно инженерство", но от години съм изключително запалена по потребителското преживяване и създаването на дизайни. В това портфолио ще намериш част от моите проекти и умения в тези области.
+            </p>
+            <a
+              class="search"
+              href="https://www.linkedin.com/in/denitsa-rashkova/"
+              >linkedin.com/in/denitsa-rashkova</a>
+          </div>
+          <div class="about-photo">
+            <div class="card">
+              <img
+                src="./img/./new-edit (13 of 20)-4.jpg"
+                class="img"
+                alt="Profile"
+              />
+            </div>
+          </div>
+          <div class="contact-card" id="contact">
+            <h3>Контакти</h3>
+            <ul>
+              <li>София, България</li>
+              <li>denitsa.rashkova@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="resume" class="resume block-dual">
+        <div class="container">
+          <div class="columns">
+            <div class="col">
+              <h3 class="section-title">Образование</h3>
+              <ul class="timeline">
+                <li>
+                  <span>2022–2026</span>
+                  <b>Софийски университет "Св. Климент Охридски", гр. София</b>
+                  <small>Софтуерно инженерство, бакалавър</small>
+                </li>
+                <li>
+                  <span>2010-2022</span>
+                  <b>СУ "Проф. д-р Асен Златаров", гр. Първомай</b>
+                  <small>Софтуерни и хардуерни науки</small>
+                </li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3 class="section-title">Технически умения</h3>
+              <div class="skills">
+                <div>
+                  <h4>Софтуер</h4>
+                  <div class="badges">
+                    <span class="badge">Ps</span>
+                    <span class="badge">Ai</span>
+                    <span class="badge">Figma</span>
+                  </div>
+                </div>
+                <div>
+                  <h4>Програмиране</h4>
+                  <div class="kv">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>XML</span>
+                    <span>SQL</span>
+                    <span>C++</span>
+                  </div>
+                </div>
+                <div class="chips">
+                  <span class="chip">Визуален дизайн</span>
+                  <span class="chip">UX/UI дизайн</span>
+                  <span class="chip">Потребителски проучвания</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience">
+        <div class="container columns">
+          <div class="col">
+            <h3 class="section-title">Опит</h3>
+            <div class="card accent">
+              <div class="chips mt">
+                <span class="chip">Креативност</span>
+                <span class="chip">Комуникация</span>
+                <span class="chip">Внимание към детайла</span>
+                <span class="chip">Адаптивност</span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <h3 class="section-title">Езици</h3>
+            <ul class="lang">
+              <li><b>Английски</b> — напреднал</li>
+              <li><b>Френски</b> — средно ниво</li>
+              <li><b>Виетнамски</b> — майчин</li>
+            </ul>
+            <h3 class="section-title mt">Хобита и интереси</h3>
+            <div class="chips">
+              <span class="chip">Класически фънк/джаз</span>
+              <span class="chip">Плетене на една кука</span>
+              <span class="chip">Дигитално изкуство</span>
+              <span class="chip">Котки</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="work">
+        <div class="container">
+          <h3 class="section-title">Избрани проекти</h3>
+          <div class="gallery">
+            <img src="./img/ex1.png" alt="Примерен проект 1" />
+            <img src="./img/ex2.png" alt="Примерен проект 2" />
+            <img src="./img/ex3.png" alt="Примерен проект 3" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <script src="./js/main.js"></script>
+    <script>
+      function loadComponent(path, element) {
+        fetch(path)
+          .then(response => response.text())
+          .then(html => {
+            document.querySelector(element).outerHTML = html;
+          });
+      }
+      window.addEventListener('DOMContentLoaded', () => {
+        loadComponent('/components/navigation.html', 'header.site-header');
+        loadComponent('/components/footer.html', 'footer.site-footer');
+      });
+    </script>
+  </body>
+</html>

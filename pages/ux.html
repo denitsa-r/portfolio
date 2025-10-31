@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/css/main.min.css" />
+    <title>User Experience Work — Portfolio</title>
+  </head>
+  <body>
+    <header class="site-header"></header>
+    <main>
+      <section class="section">
+        <div class="container">
+          <h1 class="display">Потребителско преживяване</h1>
+          <p class="lead" style="max-width: 60ch">
+            Тук са някои от моите казуси, в които разглеждам своя процес на
+            работа – от проучване до краен дизайн, насочен към потребителите.
+          </p>
+          <div class="case-study-grid">
+            <a href="case-studies/milky-way.html" class="card-link">
+              <div class="card accent">
+                <img
+                  src="../img/home.png"
+                  alt="MilkyWay App"
+                  class="img img--square"
+                />
+                <div class="card-body">
+                  <h3 class="section-title">MilkyWay</h3>
+                  <p>
+                    Цифрова платформа за прозрачност и проследяване на пътя на
+                    млечните продукти от фермата до масата.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="case-studies/makeAtoy.html" class="card-link">
+              <div class="card accent">
+                <img
+                  src="./img/new-edit (13 of 20)-4.jpg"
+                  alt="Проект Beta"
+                  class="img img--square"
+                />
+                <div class="card-body">
+                  <h3 class="section-title">Проект Beta</h3>
+                  <p>
+                    Разработка на нова функционалност за популярно фитнес
+                    приложение, която помага на потребителите да намират
+                    тренировъчни партньори.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <script src="../js/main.js"></script>
+    <script>
+      function loadComponent(path, element) {
+        fetch(path)
+          .then((response) => response.text())
+          .then((html) => {
+            document.querySelector(element).outerHTML = html;
+          });
+      }
+      window.addEventListener("DOMContentLoaded", () => {
+        loadComponent("/components/navigation.html", "header.site-header");
+        loadComponent("/components/footer.html", "footer.site-footer");
+      });
+    </script>
+  </body>
+</html>

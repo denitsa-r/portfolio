@@ -1,0 +1,16 @@
+// Define your desired min-widths
+$grid-sizes: 150px, 200px, 250px, 300px, 350px, 400px, 450px, 500px;
+
+// _mixins.scss
+@mixin grid-columns($min-width) {
+  .grid-columns-#{$min-width} {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(#{$min-width}, 1fr));
+    gap: 1rem;
+  }
+}
+
+// Auto-generate all grid classes in one go
+@each $size in $grid-sizes {
+  @include grid-columns($size);
+}
