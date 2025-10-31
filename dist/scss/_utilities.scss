@@ -217,19 +217,19 @@ h6 {
 
 .gap {
   &-xs {
-    gap: 0.5rem;
+    gap: 0.5rem !important;
   }
   &-s {
-    gap: 1rem;
+    gap: 1rem !important;
   }
   &-m {
-    gap: 1.5rem;
+    gap: 1.5rem !important;
   }
   &-l {
-    gap: 2rem;
+    gap: 2rem !important;
   }
   &-xl {
-    gap: 2.5rem;
+    gap: 2.5rem !important;
   }
 }
 
