@@ -212,6 +212,19 @@ img {
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
   }
 }
+.circle-icon {
+  padding: 0.6rem;
+  border: 2px dashed $dark_color;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: $dark_color;
+  }
+}
 
 // about
 .about {
@@ -221,8 +234,6 @@ img {
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 2rem;
-  padding: 4rem 1rem;
 }
 .fancy {
   font-family: inherit;
@@ -232,22 +243,66 @@ img {
 .search {
   display: inline-block;
   background: $accent_color;
-  color: $grey_color;
+  color: $dark_color;
   width: fit-content;
   padding: 0.75rem 1rem;
   border-radius: 999px;
 }
 .about-photo {
   position: relative;
+  max-height: 50vh;
+}
+.circle-text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 .about-photo .card {
   border-radius: 16px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
-  border: 8px solid $dark-color;
-}
-.about-photo img {
-  width: 100%;
-  display: block;
+  height: 100%;
+  > .img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(1px);
+    mix-blend-mode: luminosity;
+    z-index: 0;
+  }
+  &::before {
+    content: "";
+    background-color: $dark_color;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border-radius: 1rem;
+  }
+  &::after {
+    content: "";
+    background-image: url("../../img/my_photos/full-body.png");
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    box-shadow: rgba($dark_color, 0.8);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
 }
 .contact-card {
   position: absolute;
@@ -257,10 +312,14 @@ img {
   right: 0;
   box-shadow: none;
   border-radius: 16px;
-  background-color: $dark-color;
   color: $white_color;
   padding: 1rem;
   border: 1px solid rgba($white_color, 0.2);
+  background: rgba($dark_color, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 3;
 }
 
 // resume blocks
@@ -275,8 +334,12 @@ img {
 .columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  padding: 3rem 1rem;
+  h3 {
+    color: $white_color;
+  }
+  h4 {
+    color: $accent_color_on_dark;
+  }
 }
 .col {
   min-width: 0;
@@ -287,7 +350,7 @@ img {
   li {
     background: rgba(255, 255, 255, 0.05);
     padding: 0.75rem 1rem;
-    border-left: 4px solid $light_primary;
+    border-left: 4px solid $accent_color_on_dark;
     border-radius: 12px;
   }
   span {
@@ -303,7 +366,7 @@ img {
 }
 .timeline.compact li {
   background: $accent_color;
-  color: #000;
+  color: $dark_color;
 }
 .skills .badges {
   display: flex;
@@ -311,15 +374,20 @@ img {
   flex-wrap: wrap;
 }
 .badge {
-  background: rgba($light_color, 0.9);
-  color: #000;
+  background: $white_color;
+  color: $dark_color;
   padding: 0.5rem 1rem;
-  border-radius: 999px;
+  border-radius: 1rem;
 }
 .kv {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  > span {
+    padding: 0.5rem 1rem;
+    border: 2px dashed;
+    border-radius: 1rem;
+  }
 }
 .chips {
   display: flex;
@@ -327,9 +395,9 @@ img {
   gap: 0.5rem;
 }
 .chip {
-  background: rgba($grey_color, 0.6);
-  color: $light_color;
-  padding: 0.35rem 0.75rem;
+  background: $grey_color;
+  color: $white_color;
+  padding: 0.5rem 1rem;
   border-radius: 999px;
   font-weight: 600;
 }
@@ -341,7 +409,12 @@ img {
 .experience {
   background: $cream_color;
   color: $dark_color;
-  padding-bottom: 3rem;
+  h3 {
+    color: $dark_color;
+  }
+  .chip {
+    background: rgba($grey_color, 0.8);
+  }
 }
 .card {
   border-radius: 24px;
@@ -358,15 +431,10 @@ img {
 }
 .card.accent {
   background: $grey_color;
-  color: #000;
+  color: $dark_color;
   padding: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(4px);
-  img {
-    object-fit: cover;
-    object-position: center;
-    border-radius: 8px;
-  }
 }
 .card-body {
   display: flex;
@@ -386,13 +454,6 @@ img {
 .card-link:hover .card {
   transform: translateY(-4px);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
-}
-.card img {
-  display: block;
-  width: auto;
-  height: 100%;
-  max-height: 500px;
-  object-fit: cover;
 }
 .lang {
   display: grid;
@@ -495,19 +556,10 @@ h1 {
   }
 }
 // Responsive adjustments
-@media (max-width: 992px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    padding: 2rem 1rem 3rem;
-  }
-}
 
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding: 2.5rem 1rem;
   }
   .columns {
     grid-template-columns: 1fr;
