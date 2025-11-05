@@ -54,7 +54,7 @@ img {
 .brand {
   font-family: inherit;
   font-weight: 700;
-  color: my_lighten($accent_color, 10%);
+  color: my_lighten($accent_color_on_dark, 10%);
 
   font-size: 1.1rem;
 }
@@ -174,7 +174,7 @@ img {
   }
   .outline {
     color: $dark_color;
-    -webkit-text-stroke: 2px $accent_color;
+    -webkit-text-stroke: 2px $accent_color_on_dark;
     font-size: 6rem;
     top: 0;
     left: 0;
@@ -430,11 +430,16 @@ img {
   border-radius: 12px;
 }
 .card.accent {
-  background: $grey_color;
+  background: $light_primary;
   color: $dark_color;
   padding: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(4px);
+  > .img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+  }
 }
 .card-body {
   display: flex;
