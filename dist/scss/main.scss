@@ -599,13 +599,13 @@ h1 {
   background: rgba($primary_color, 0.08);
 }
 .case-study-intro .grid > div {
-  background: rgba($primary_color, 0.12);
-  border-left: 4px solid $light_primary;
+  background: rgba($accent_color_on_dark, 0.12);
+  border-left: 4px solid $accent_color_on_dark;
   padding: 1rem;
   border-radius: 12px;
-}
-.case-study-intro > div {
-  padding: 0 1.5rem;
+  > p {
+    color: my_darken($white_color, 10%);
+  }
 }
 .card-link {
   display: block;

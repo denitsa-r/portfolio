@@ -48,6 +48,35 @@
   }
 }
 
+//color
+.color {
+  &-primary {
+    color: $primary_color;
+  }
+  &-light {
+    color: $light_color;
+    border: #ccc 1px solid;
+  }
+  &-dark {
+    color: $dark_color;
+  }
+  &-danger {
+    color: $danger_color;
+  }
+  &-white {
+    color: $white_color;
+  }
+  &-accent {
+    color: $accent_color;
+  }
+  &-accent_on_dark {
+    color: $accent_color_on_dark;
+  }
+  &-grey {
+    color: $grey_color;
+  }
+}
+
 //buttons
 .btn {
   display: inline-block;
@@ -235,6 +264,9 @@ h6 {
 }
 
 .p {
+  &-none {
+    padding: 0;
+  }
   &-xs {
     padding: 0.5rem;
   }
