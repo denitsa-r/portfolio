@@ -440,40 +440,13 @@ img {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 .accent-style {
   background: rgba(59, 167, 201, 0.12);
   border-left: 4px solid #8fd3ff;
   border-radius: 12px;
 }
-.card.accent {
-  background: $light_primary;
-  color: $dark_color;
-  padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  > .img {
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-}
-.card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  p {
-    color: $white_color;
-  }
-}
-.card-link {
-  display: block;
-  color: inherit;
-}
-.card-link .card {
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
+
 .card-link:hover .card {
   transform: translateY(-4px);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
@@ -600,6 +573,10 @@ h1 {
   }
 }
 
+.ux-section {
+  color: $dark_color;
+}
+
 // Case studies accent backgrounds
 .case-study {
   background: $cream_color;
@@ -630,13 +607,35 @@ h1 {
 .case-study-intro > div {
   padding: 0 1.5rem;
 }
-.case-study-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+.card-link {
+  display: block;
+  color: inherit;
 }
-@media (max-width: 768px) {
-  .case-study-grid {
-    grid-template-columns: 1fr;
+.card-link .card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.card.accent {
+  background: my_lighten($white_color, 60%);
+  color: $grey_color;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  > .img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  .section-title {
+    color: $dark_color;
+  }
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  p {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2; /* максимум редове */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

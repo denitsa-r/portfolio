@@ -1,13 +1,15 @@
 @use "sass:color";
+@use "sass:math";
 
-// Custom lightening function to replace deprecated `lighten`
-// Usage: my_lighten(#123456, 10%)
-@function my_lighten($base-color, $amount) {
-  @return color.scale($base-color, $lightness: $amount);
+@function my_lighten($color, $amount) {
+  // Превръщаме 10 → 10%
+  $val: if(math.is-unitless($amount), $amount * 1%, $amount);
+
+  @return color.scale($color, $lightness: $val);
 }
 
-// Custom darkening function to replace deprecated `darken`
-// Usage: my_darken(#123456, 10%)
-@function my_darken($base-color, $amount) {
-  @return color.scale($base-color, $lightness: -$amount);
+@function my_darken($color, $amount) {
+  $val: if(math.is-unitless($amount), $amount * 1%, $amount);
+
+  @return color.scale($color, $lightness: -$val);
 }

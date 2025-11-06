@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $primary_color: #3ba7c9; // cool teal
 $light_color: #e8eef5; // cool light
 $forest_color: #0f1b2d; // deep navy background
@@ -12,8 +14,10 @@ $grey_color: #535461; // blue-gray
 $max-width: 1500px;
 
 // set text color based on the background
-@function set-text-color($color) {
-  @if (lightness($color) > 60) {
+@function set-text-color($base_color) {
+  $hsl: color.to-space($base_color, hsl);
+
+  @if (color.channel($hsl, "lightness") > 60) {
     @return $grey_color;
   } @else {
     @return $light_color;
