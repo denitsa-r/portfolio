@@ -28,7 +28,7 @@
       </section>
 
       <section id="about" class="about">
-        <div class="container about-grid py-xl px-m gap-l">
+        <div class="container flex space-between py-xl px-m gap-l">
           <div class="d-flex-column gap-l">
             <h2 class="heading-m t-style-b">Здравейте, аз съм Деница!</h2>
             <div class="d-flex-column gap-s">
@@ -60,39 +60,39 @@
                 class="img"
                 alt="Image of Denitsa Rashkova"
               />
-              <!-- <div class="circle-text">
-                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    id="topArc"
-                    d="M 50,150 A 100,100 0 0,1 250,150"
-                    fill="transparent"
-                    stroke="none"
-                  />
-                  <path
-                    id="bottomArc"
-                    d="M 250,150 A 100,100 0 0,1 50,150"
-                    fill="transparent"
-                    stroke="none"
-                  />
-                  <text font-size="24" fill="white" font-family="Comfortaa" text-anchor="middle">
-                    <textPath href="#topArc" startOffset="50%">
-                      Свържете се 
-                    </textPath>
+              <div class="circle-text">
+                <svg class="arc-text" viewBox="0 0 300 300">
+                  <!-- Горна много по-висока арка -->
+                  <path id="topArc" d="M 30 120 A 120 120 0 0 1 270 120" fill="transparent"></path>
+
+                  <text font-size="26" fill="white" font-family="Comfortaa">
+                      <textPath href="#topArc"
+                                startOffset="50%"
+                                text-anchor="middle"
+                                textLength="300"
+                                lengthAdjust="spacing"
+                                method="stretch">
+                          Свържете се
+                      </textPath>
                   </text>
-                  <text font-size="24" fill="white" font-family="sans-serif" text-anchor="middle">
-                    <textPath href="#bottomArc" startOffset="50%" side="left">
-                      с мен!
-                    </textPath>
+
+                  <!-- Долна арка, вдигната нагоре и по-близо -->
+                  <path id="bottomArc" d="M 30 130 A 120 120 1 0 0 270 130" fill="transparent"></path>
+
+                  <text font-size="26" fill="white" font-family="Comfortaa">
+                      <textPath href="#bottomArc" 
+                                startOffset="50%"
+                                text-anchor="middle"
+                                textLength="300"
+                                lengthAdjust="spacing"
+                                method="stretch">
+                          с мен!
+                      </textPath>
                   </text>
-                </svg>
-              </div> -->
-              <div class="contact-card" id="contact">
-                <h3>Контакти</h3>
-                <ul>
-                  <li>София, България</li>
-                  <li>denitsa.rashkova@gmail.com</li>
-                </ul>
+              </svg>
+
               </div>
+              
             </div>
           </div>
         </div>

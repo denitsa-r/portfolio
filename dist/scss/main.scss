@@ -231,10 +231,6 @@ img {
   background: $cream_color;
   color: $dark_color;
 }
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-}
 .fancy {
   font-family: inherit;
   font-weight: 900;
@@ -247,18 +243,41 @@ img {
   width: fit-content;
   padding: 0.75rem 1rem;
   border-radius: 999px;
+  transition: 0.5s ease-in-out;
+  &:hover {
+    background-color: $accent_color_on_dark;
+    transition: 0.5s ease-in-out;
+  }
 }
 .about-photo {
   position: relative;
-  max-height: 50vh;
+}
+.about-photo,
+.about-photo .card {
+  max-height: 100vh;
+  height: 100%;
+  min-height: 250px;
+  width: 300px;
 }
 .circle-text {
   width: 100%;
   height: 100%;
   position: absolute;
+  z-index: 3;
+  display: none;
   svg {
     width: 100%;
     height: 100%;
+    overflow: visible;
+    text {
+      fill: rgba($dark_color, 0.8); /* основен цвят на текста */
+      stroke: #dfc9f6; /* цвят на контура */
+      stroke-width: 3px; /* дебелина на контура */
+      paint-order: stroke fill; /* първо контура, после fill */
+      &:last-child {
+        z-index: 9;
+      }
+    }
   }
 }
 .about-photo .card {
@@ -293,7 +312,6 @@ img {
     background-repeat: none;
     background-position: center;
     background-size: cover;
-    box-shadow: rgba($dark_color, 0.8);
     top: 0;
     bottom: 0;
     left: 0;
