@@ -18,9 +18,9 @@ $max-width: 1500px;
   $hsl: color.to-space($base_color, hsl);
 
   @if (color.channel($hsl, "lightness") > 60) {
-    @return $grey_color;
+    @return $dark_color;
   } @else {
-    @return $light_color;
+    @return $white_color;
   }
 }
 

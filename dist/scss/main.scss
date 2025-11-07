@@ -367,7 +367,7 @@ img {
   display: grid;
   gap: 1rem;
   li {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba($accent_color_on_dark, 0.12);
     padding: 0.75rem 1rem;
     border-left: 4px solid $accent_color_on_dark;
     border-radius: 12px;
@@ -443,9 +443,14 @@ img {
   flex-direction: column;
 }
 .accent-style {
-  background: rgba(59, 167, 201, 0.12);
-  border-left: 4px solid #8fd3ff;
+  background: rgba($accent_color_on_dark, 0.12);
+  border-left: 4px solid $accent_color_on_dark;
   border-radius: 12px;
+}
+
+.bg-white .accent-style {
+  background-color: rgba($accent_color, 0.12);
+  border-left-color: $accent_color;
 }
 
 .card-link:hover .card {
