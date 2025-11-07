@@ -51,29 +51,29 @@
 //color
 .color {
   &-primary {
-    color: $primary_color;
+    color: $primary_color !important;
   }
   &-light {
-    color: $light_color;
+    color: $light_color !important;
     border: #ccc 1px solid;
   }
   &-dark {
-    color: $dark_color;
+    color: $dark_color !important;
   }
   &-danger {
-    color: $danger_color;
+    color: $danger_color !important;
   }
   &-white {
-    color: $white_color;
+    color: $white_color !important;
   }
   &-accent {
-    color: $accent_color;
+    color: $accent_color !important;
   }
   &-accent_on_dark {
-    color: $accent_color_on_dark;
+    color: $accent_color_on_dark !important;
   }
   &-grey {
-    color: $grey_color;
+    color: $grey_color !important;
   }
 }
 
@@ -367,10 +367,6 @@ h6 {
   &-circle {
     list-style-type: circle;
   }
-}
-
-.color-primary {
-  color: $primary_color;
 }
 
 .flex-direction {
