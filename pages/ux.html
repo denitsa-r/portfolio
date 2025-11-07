@@ -9,23 +9,23 @@
   <body>
     <header class="site-header"></header>
     <main class="bg-white">
-      <section class="section">
+      <section class="ux-section">
         <div class="container d-flex-column gap-m">
-          <h1 class="display">Потребителско преживяване</h1>
+          <h1 class="display">Потребителско изживяване</h1>
           <p class="lead">
-            Тук са някои от моите казуси, в които разглеждам своя процес на
-            работа – от проучване до краен дизайн, насочен към потребителите.
+            Тук са някои от моите проекти, в които показвам своя процес на
+            работа - от проучване до краен продукт и дизайн за потребителите.
           </p>
-          <div class="case-study-grid py-m">
+          <div class="grid-columns-300px">
             <a href="case-studies/milky-way.html" class="card-link">
               <div class="card accent">
                 <img
-                  src="../img/home.png"
+                  src="../img/milky_way.jpg"
                   alt="MilkyWay App"
                   class="img img--square"
                 />
-                <div class="card-body">
-                  <h3 class="section-title">MilkyWay</h3>
+                <div class="card-body p-m d-flex-column">
+                  <h3 class="section-title t-style-b">MilkyWay</h3>
                   <p>
                     Цифрова платформа за прозрачност и проследяване на пътя на
                     млечните продукти от фермата до масата.
@@ -45,8 +45,35 @@
           .then((response) => response.text())
           .then((html) => {
             document.querySelector(element).outerHTML = html;
+
+            // If we just loaded the navigation, initialize it
+            if (element === "header.site-header") {
+              initNavigation();
+            }
           });
       }
+
+      function initNavigation() {
+        const navToggle = document.getElementById("navToggle");
+        const nav = document.getElementById("nav");
+
+        if (navToggle && nav) {
+          navToggle.addEventListener("click", function () {
+            nav.classList.toggle("show");
+          });
+
+          // Optional: Close menu when clicking outside
+          document.addEventListener("click", function (event) {
+            if (
+              !navToggle.contains(event.target) &&
+              !nav.contains(event.target)
+            ) {
+              nav.classList.remove("show");
+            }
+          });
+        }
+      }
+
       window.addEventListener("DOMContentLoaded", () => {
         loadComponent("../components/navigation.html", "header.site-header");
         loadComponent("../components/footer.html", "footer.site-footer");

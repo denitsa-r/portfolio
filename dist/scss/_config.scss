@@ -1,21 +1,26 @@
+@use "sass:color";
+
 $primary_color: #3ba7c9; // cool teal
-$light_primary: #8fd3ff; // light aqua
-$dark_color: #0a0f1a; // near-black navy
-$grey_color: #2a3548; // blue-gray
 $light_color: #e8eef5; // cool light
 $forest_color: #0f1b2d; // deep navy background
 $cream_color: #f4f7fb; // cool off-white
-$white_color: #ffffff;
-$accent_color: #6ee7f2; // cyan accent
 $danger_color: #7f170e;
+$white_color: #efecee;
+$dark_color: #0b1220; // near-black navy
+$accent_color: #baabc9; // cyan accent
+$accent_color_on_dark: #dfc9f6; // cyan accent
+$light_primary: #485471; // light aqua
+$grey_color: #4c4d59; // blue-gray
 $max-width: 1500px;
 
 // set text color based on the background
-@function set-text-color($color) {
-  @if (lightness($color) > 60) {
-    @return $grey_color;
+@function set-text-color($base_color) {
+  $hsl: color.to-space($base_color, hsl);
+
+  @if (color.channel($hsl, "lightness") > 60) {
+    @return $dark_color;
   } @else {
-    @return $light_color;
+    @return $white_color;
   }
 }
 

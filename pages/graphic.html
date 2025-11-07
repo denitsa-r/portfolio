@@ -8,11 +8,11 @@
   </head>
   <body>
     <header class="site-header"></header>
-    <main class="d-flex-column gap-l py-l">
+    <main class="d-flex-column gap-xl py-l">
       <section class="section d-flex-column gap-l">
-        <div class="container d-flex-column gap-m">
+        <div class="container d-flex-column gap-m p-none px-m">
           <h1 class="display">Графичен дизайн</h1>
-          <p class="lead">
+          <p>
             Колекция от мои проекти и задачи от училище, включваща векторни
             илюстрации, фотоманипулации и колажи.
           </p>
@@ -20,8 +20,8 @@
       </section>
 
       <section class="section work-category d-flex-column gap-xs">
-        <div class="container  d-flex-column gap-s">
-          <h2 class="section-title">Векторна графика</h2>
+        <div class="container  d-flex-column gap-s p-none px-m">
+          <h2 class="section-title color-accent_on_dark t-style-sb">Векторна графика</h2>
           <div class="ggrid">
             <div class="gitem">
               <img
@@ -81,8 +81,8 @@
       </section>
 
       <section class="section work-category alt-bg">
-        <div class="container  d-flex-column gap-s">
-          <h2 class="section-title">Фотообработка и колажи</h2>
+        <div class="container d-flex-column gap-s p-none px-m">
+          <h2 class="section-title color-accent_on_dark t-style-sb">Фотообработка и колажи</h2>
           <div class="ggrid">
             <div class="gitem">
               <img
@@ -154,17 +154,41 @@
     <footer class="site-footer"></footer>
     <script src="../js/main.js"></script>
     <script>
-      function loadComponent(path, element) {
-        fetch(path)
-          .then((response) => response.text())
-          .then((html) => {
-            document.querySelector(element).outerHTML = html;
-          });
-      }
-      window.addEventListener("DOMContentLoaded", () => {
-        loadComponent("../components/navigation.html", "header.site-header");
-        loadComponent("../components/footer.html", "footer.site-footer");
+  function loadComponent(path, element) {
+    fetch(path)
+      .then((response) => response.text())
+      .then((html) => {
+        document.querySelector(element).outerHTML = html;
+        
+        // If we just loaded the navigation, initialize it
+        if (element === "header.site-header") {
+          initNavigation();
+        }
       });
-    </script>
+  }
+  
+  function initNavigation() {
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.getElementById('nav');
+    
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', function() {
+        nav.classList.toggle('show');
+      });
+      
+      // Optional: Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!navToggle.contains(event.target) && !nav.contains(event.target)) {
+          nav.classList.remove('show');
+        }
+      });
+    }
+  }
+  
+  window.addEventListener("DOMContentLoaded", () => {
+    loadComponent("/components/navigation.html", "header.site-header");
+    loadComponent("/components/footer.html", "footer.site-footer");
+  });
+</script>
   </body>
 </html>
