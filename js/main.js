@@ -34,8 +34,3 @@ function initNavigation() {
     });
   }
 }
-
-window.addEventListener("DOMContentLoaded", () => {
-  loadComponent("../../components/navigation.html", "header.site-header");
-  loadComponent("../../components/footer.html", "footer.site-footer");
-});
