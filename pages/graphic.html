@@ -153,5 +153,11 @@
     </main>
     <footer class="site-footer"></footer>
     <script src="../js/main.js"></script>  
+    <script>           
+      window.addEventListener("DOMContentLoaded", () => {
+        loadComponent("../components/navigation.html", "header.site-header");
+        loadComponent("../components/footer.html", "footer.site-footer");
+      });
+    </script>
   </body>
 </html>
